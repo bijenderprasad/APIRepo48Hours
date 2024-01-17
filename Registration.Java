@@ -64,6 +64,7 @@ public class Registration extends getPage{
 		}
 	 public void launchurl(String url) {
 		hiturl(url);
+		console.log("HOTSPOTFIX-29");
 		
 		
 	}
