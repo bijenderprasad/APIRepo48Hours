@@ -57,7 +57,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 		Cell cell = row.createCell(column);		 
 		cell.setCellValue(value);		 
 		FileOutputStream fos = new FileOutputStream(src);		 
-		wb.write(fos);		
+		wb.write(fos);	
+		wb.exit();
 	}
 }
 
