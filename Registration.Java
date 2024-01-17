@@ -13,6 +13,7 @@ public class Registration extends getPage{
 	
 	public registerPageActionClass(WebDriver driver) {
 		super(driver);
+		console.log("HOTSPOTFIX-28");
 	}
 
 	public void entername(By token, String value) {
