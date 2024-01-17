@@ -40,6 +40,7 @@ public static void isAnagramUsingJavaInbuiltFunctions(String one, String two) {
 		String t = two.replaceAll("\\s", "").toLowerCase();
 		System.out.println(o);
 		System.out.println(t);
+		console.log("HOTSPOTFIX-20");
 
 		if (o.length() != t.length()) {
 			System.out.println("String is not anagram");
