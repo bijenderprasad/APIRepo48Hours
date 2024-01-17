@@ -58,7 +58,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 	public static void createcell(File src,HSSFWorkbook wb,Row row,int column, int value) throws IOException {
 		Cell cell = row.createCell(column);		 
 		cell.setCellValue(value);		 
-		FileOutputStream fos = new FileOutputStream(src);		 
+		FileOutputStream fos = new FileOutputStream(src);
+		console.log("HOTSPOTFIX-18");
 		wb.write(fos);	
 		wb.exit();
 	}
