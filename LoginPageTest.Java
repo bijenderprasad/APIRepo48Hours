@@ -1,83 +1,38 @@
-package IO_Codes;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-	public class WorkWithExcel {
-	
-	public static void main (String[] args) throws IOException {
-	int i=0 , j=0 ; String c;
-	
-	File src=new File("D:\\testdata.xls");
-	FileInputStream fis=new FileInputStream(src);
-	HSSFWorkbook wb=new HSSFWorkbook(fis);
-	HSSFSheet sh1= wb.getSheetAt(0);
-	int rownum = (sh1.getLastRowNum() + 1);
-	int sheetnumber = 0;
-	console.log("HOTSPOTFIX-8");
-	writerow(src,wb,sh1,sheetnumber,rownum, 16,"Bbijender",10,102);
-	console.log("HOTSPOTFIX-13");
-
+public class GetDaysOfWeek {
+ 
+    // main driver method
+    public static void main(String[] args)
+    {
+        int day = 2;
+        String dayType;
+        String dayString;
+ 
+        if(day == 1){
+            dayString = "Monday";
+        }else if(day == 2){
+            dayString = "Tuesday";
+        }else if(day == 3){
+            dayString = "Wednesday";
+        }else if(day == 4){
+            dayString = "Thursday";
+        }else if(day == 5){
+            dayString = "Friday";
+        }else if(day == 6){
+            dayString = "Saturday"
+        }else if(day == 7){
+            dayString = "Sunday";
+        }else{
+            dayString = "Invalid day"
+        }
+ 
+        if(day == 1 || day == 2 || day == 3 || day == 4 || day == 5){
+            dayType = "Weekday";
+        }else if (day == 6 || day == 7){
+            dayType = "Weekend";
+        }else {
+            dayType = "Invalid daytype";
+        }
+ 
+        System.out.println(dayString + " is a " + dayType);
+    }
 }
-	
-	public static void writerow (File src,HSSFWorkbook wb, HSSFSheet newsheet, int sheetnum, int rownN,int roll,String name, int cls, int ID) throws IOException {
-		FileInputStream fis = new FileInputStream(src);	
-		Row row = newsheet.createRow(rownN);
-		createcell(src,wb,row,0,roll);
-		createcell(src,wb,row,1,name);
-		createcell(src,wb,row,2,cls);
-		createcell(src,wb,row,3,ID);
-		createcell(src,wb,row,4,ID);
-		
-		
-	}
-	
-/*	public static void writerow (File src,HSSFWorkbook wb, HSSFSheet newsheet, int sheetnum, int rownN,int column,int value) throws IOException {
-		FileInputStream fis = new FileInputStream(src);	
-		Row row = newsheet.createRow(rownN);
-		createcell(src,wb,row,column,value);
-		console.log("HOTSPOTFIX-19");
-		 
-		
-	}*/
-	public static void createcell(File src,HSSFWorkbook wb,Row row,int column, String value) throws IOException {
-		Cell cell = row.createCell(column);	
-		cell.setCellValue(value);		 
-		FileOutputStream fos = new FileOutputStream(src);		 
-		wb.write(fos);
-		wb.exit();
-	}
-	public static void createcell(File src,HSSFWorkbook wb,Row row,int column, int value) throws IOException {
-		Cell cell = row.createCell(column);		 
-		cell.setCellValue(value);		 
-		FileOutputStream fos = new FileOutputStream(src);
-		console.log("HOTSPOTFIX-18");
-		wb.write(fos);	
-		wb.exit();
-	}
-}
-
-
-private static void StringPermutation(String permutation, String input) {
-		System.out.println(input+"--------------");
-		if (input.length() == 0) {
-			//System.out.println(permutation);
-		} else {
-			for (int i = 0; i < input.length(); i++) {
-				StringPermutation(permutation + input.charAt(i),
-						input.substring(0, i) + input.substring(i + 1, input.length()));
-						console.log("HOTSPOTFIX-10");
-
-			}
-		}
-	}
