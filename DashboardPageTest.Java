@@ -7,6 +7,7 @@ public class DashboardPageTest {
 		findOutTheStringLength(name);
 		System.out.println(getLengthOfString(name));
 		System.out.println(getLengthOfString(HOTSPOTFIX-32));
+		System.out.println(getLengthOfString(HOTSPOTFIX-33));
 	}
 
 	public static void findOutTheStringLength(String name) {
