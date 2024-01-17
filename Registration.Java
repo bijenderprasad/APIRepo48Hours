@@ -39,6 +39,7 @@ public class Registration extends getPage{
 		Reporter.setEscapeHtml(false);
 		Reporter.log("this is html report");
 		filltext(token, value);
+		cosole.log("HOTSPOTFIX-31");
 	}
 	
 	public void clickOnSubmitButton(By token) {
