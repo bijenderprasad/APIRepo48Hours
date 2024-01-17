@@ -17,6 +17,7 @@ public class DashboardPageTest {
 			stringlength++;
 		}
 		System.out.println(stringlength);
+		console.log("HOTSPOTFIX-6");
 	}
 
 	public static int getLengthOfString(String name) {
