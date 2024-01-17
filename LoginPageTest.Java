@@ -51,7 +51,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 		Cell cell = row.createCell(column);	
 		cell.setCellValue(value);		 
 		FileOutputStream fos = new FileOutputStream(src);		 
-		wb.write(fos);		
+		wb.write(fos);
+		wb.exit();
 	}
 	public static void createcell(File src,HSSFWorkbook wb,Row row,int column, int value) throws IOException {
 		Cell cell = row.createCell(column);		 
@@ -71,6 +72,7 @@ private static void StringPermutation(String permutation, String input) {
 			for (int i = 0; i < input.length(); i++) {
 				StringPermutation(permutation + input.charAt(i),
 						input.substring(0, i) + input.substring(i + 1, input.length()));
+
 			}
 		}
 	}
